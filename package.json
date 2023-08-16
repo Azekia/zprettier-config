@@ -1,0 +1,14 @@
+{
+    "name": "zprettier-config",
+    "version": "1.0.0",
+    "private": false,
+    "description": "our prettier config for js/html/css development",
+    "main": "index.mjs",
+    "scripts": {
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/azekia/zprettier-config.git"
+    },
+    "author": "Antonio Begines Cerrada <abegines@azekia.com>",
+}
