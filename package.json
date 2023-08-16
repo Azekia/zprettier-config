@@ -1,6 +1,6 @@
 {
     "name": "zprettier-config",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "private": false,
     "description": "our prettier config for js/html/css development",
     "main": "index.mjs",
