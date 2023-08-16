@@ -5,6 +5,7 @@
     "description": "our prettier config for js/html/css development",
     "main": "index.mjs",
     "scripts": {
+        "test": "mocha"
     },
     "repository": {
         "type": "git",

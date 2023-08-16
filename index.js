@@ -9,4 +9,4 @@ const prettier_config = {
     "trailingComma": "none"
 }
 
-export default prettier_config;
+module.exports = prettier_config;
