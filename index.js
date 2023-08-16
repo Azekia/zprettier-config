@@ -6,7 +6,15 @@ const prettier_config = {
     "arrowParens": "always",
     "printWidth": 136,
     "semi": true,
-    "trailingComma": "none"
+    "trailingComma": "none",
+    "overrides": [
+        {
+            "files": "*.html",
+            "options": {
+                "tabWidth": 2
+            }
+        }
+    ]
 }
 
 module.exports = prettier_config;
