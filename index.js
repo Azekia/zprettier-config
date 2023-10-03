@@ -1,5 +1,5 @@
 const prettier_config = {
-    "tabWidth": 4,
+    "tabWidth": 2,
     "useTabs": false,
     "singleQuote": true,
     "bracketSpacing": true,
@@ -7,14 +7,6 @@ const prettier_config = {
     "printWidth": 136,
     "semi": true,
     "trailingComma": "none",
-    "overrides": [
-        {
-            "files": "*.html",
-            "options": {
-                "tabWidth": 2
-            }
-        }
-    ]
 }
 
 module.exports = prettier_config;
