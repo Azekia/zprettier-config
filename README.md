@@ -39,6 +39,12 @@ Importante recordar que debemos tener instalado el complemento **Prettier** y qu
 ```
 "editor.defaultFormatter": "esbenp.prettier-vscode"
 ```
+También podemos especificarlo solamente para un formato de archivos
+```
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+```
 
 ####Reformateo de todo el proyecto
 Para reformatear todos los archivos del proyecto podemos ejecutar
