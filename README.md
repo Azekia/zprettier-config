@@ -9,7 +9,7 @@ our **shared prettier config** for js/html/css development
 Debemos instalar como dependencia de desarrollo ejecutando algo similar a...
 
 ```
-npm install --save-dev https://github.com/azekia/zprettier-config.git#1.0.0
+npm install --save-dev https://github.com/azekia/zprettier-config.git#1.0.1
 npm install --save-dev https://github.com/azekia/zprettier-config.git
 ```
 
