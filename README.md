@@ -4,7 +4,7 @@ our **shared prettier config** for js/html/css development
 ---
 
 
-####Configuración a través de package.json
+#### Configuración a través de package.json
 **npm install**
 Debemos instalar como dependencia de desarrollo ejecutando algo similar a...
 
@@ -33,7 +33,7 @@ Ahora para hacer que se use como opciones de formato... bastará con incluir en 
 
 ---
 
-####Selección del formateador por defecto en Visual Studio Code
+#### Selección del formateador por defecto en Visual Studio Code
 Importante recordar que debemos tener instalado el complemento **Prettier** y que en alguna configuración de Visual Studio Code, ya sea en la general o en la específica del proyecto `.vscode/settings.json`, se deberá indicará:
 
 ```
@@ -46,7 +46,7 @@ También podemos especificarlo solamente para un formato de archivos
   },
 ```
 
-####Reformateo de todo el proyecto
+#### Reformateo de todo el proyecto
 Para reformatear todos los archivos del proyecto podemos ejecutar
 
 ```
