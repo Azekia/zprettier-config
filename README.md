@@ -37,7 +37,8 @@ Ahora para hacer que se use como opciones de formato... bastará con incluir en 
 Importante recordar que debemos tener instalado el complemento **Prettier** y que en alguna configuración de Visual Studio Code, ya sea en la general o en la específica del proyecto `.vscode/settings.json`, se deberá indicará:
 
 ```
-"editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.formatOnSave": true
 ```
 También podemos especificarlo solamente para un formato de archivos
 ```
