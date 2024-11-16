@@ -34,7 +34,9 @@ Ahora para hacer que se use como opciones de formato... bastará con incluir en 
 ---
 
 #### Selección del formateador por defecto en Visual Studio Code
-Importante recordar que debemos tener instalado el complemento **Prettier**y el **Eslint** y que en alguna configuración de Visual Studio Code, ya sea en la general o en la específica del proyecto `.vscode/settings.json`, se deberá indicará algo así como:
+Importante recordar que debemos tener instalado el complemento **Prettier** que en alguna configuración de Visual Studio Code, ya sea en la general o en la específica del proyecto `.vscode/settings.json`.
+Recordar que para el código javascript **no usaremos** Pettier, sino el linter que viene con vscode para Typesript.
+Por ello, debermos configurar el workspace siguiendo esta guía:
 
 ```
 {
