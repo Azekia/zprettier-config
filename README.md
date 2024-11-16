@@ -34,17 +34,47 @@ Ahora para hacer que se use como opciones de formato... bastará con incluir en 
 ---
 
 #### Selección del formateador por defecto en Visual Studio Code
-Importante recordar que debemos tener instalado el complemento **Prettier** y que en alguna configuración de Visual Studio Code, ya sea en la general o en la específica del proyecto `.vscode/settings.json`, se deberá indicará:
+Importante recordar que debemos tener instalado el complemento **Prettier**y el **Eslint** y que en alguna configuración de Visual Studio Code, ya sea en la general o en la específica del proyecto `.vscode/settings.json`, se deberá indicará algo así como:
 
 ```
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
-  "editor.formatOnSave": true
-```
-También podemos especificarlo solamente para un formato de archivos
-```
+{
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit"
+    }
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#f0c018",
+    "activityBar.activeBorder": "#ffffff",
+    "activityBar.background": "#f0c018",
+    "activityBar.foreground": "#ffffff",
+    "activityBar.inactiveForeground": "#ffffff",
+    "activityBarBadge.background": "#f0c018",
+    "activityBarBadge.foreground": "#ffffff",
+    "sash.hoverBorder": "#f0c018",
+    "statusBar.background": "#f0c018",
+    "statusBar.foreground": "#000000",
+    "statusBarItem.hoverBackground": "#f0c018",
+    "statusBarItem.remoteBackground": "#f0c018",
+    "statusBarItem.remoteForeground": "#ffffff",
+    "titleBar.activeBackground": "#f0c018",
+    "titleBar.activeForeground": "#ffffff",
+    "titleBar.inactiveBackground": "#f0c018",
+    "titleBar.inactiveForeground": "#ffffff"
+  }
+}
+
 ```
 
 #### Reformateo de todo el proyecto
