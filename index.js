@@ -4,7 +4,7 @@ const prettier_config = {
     "singleQuote": true,
     "bracketSpacing": true,
     "arrowParens": "always",
-    "printWidth": 136,
+    "printWidth": 150,
     "semi": true,
     "trailingComma": "none",
 }
