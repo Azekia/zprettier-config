@@ -1,33 +1,8 @@
 # zprettier-config
-our **shared prettier config** for js/html/css development
+our **shared prettier linter config** for js/html/css development
 
 ---
 
-
-#### Configuración a través de package.json
-**npm install**
-Debemos instalar como dependencia de desarrollo ejecutando algo similar a...
-
-```
-npm install --save-dev https://github.com/azekia/zprettier-config.git
-
-```
-
-Si ya lo tienes instalado como dependencia, pero deseas actualizarlo a la última versión, puedes hacer:
-```
-npm update zprettier-config  
-```
-
-Este comando provocará que en `package.json` aparezca:
-
-```json
-  "devDependencies": {
-    ...
-    "zprettier-config": "github:azekia/zprettier-config"
-  },
-```
-
-Nosotros lo completaremos con slint
 ### `package.json`
 ```json
   "devDependencies": {
@@ -41,6 +16,12 @@ Nosotros lo completaremos con slint
   },
   "prettier": "zprettier-config"
 ```
+
+Si ya lo tienes instalado como dependencia, pero deseas actualizarlo a la última versión, puedes hacer:
+```
+npm update zprettier-config  
+```
+
 
 #### Selección del formateador por defecto en Visual Studio Code
 Importante recordar que debemos tener instalado el complemento **Prettier** que en alguna configuración de Visual Studio Code, ya sea en la general o en la específica del proyecto `.vscode/settings.json`.
