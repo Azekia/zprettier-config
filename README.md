@@ -11,6 +11,8 @@ our **shared prettier linter config** for js/html/css development
 ### `package.json`
 En `package.json` debemos configurar las siguientes dependencias de desarrollo y la configuración de Prettier:
 
+Parece que la versión 9.x de slint rompió cosas, por lo que por el momento nos quedamos en 8.49
+
 ```json
   "devDependencies": {
     "eslint": "^8.49.0",
