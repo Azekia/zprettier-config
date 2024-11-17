@@ -31,7 +31,7 @@ Este comando provocará que en `package.json` aparezca:
     "zprettier-config": "github:azekia/zprettier-config"
   },
   "prettier": "zprettier-config"
----
+```
 
 #### Selección del formateador por defecto en Visual Studio Code
 Importante recordar que debemos tener instalado el complemento **Prettier** que en alguna configuración de Visual Studio Code, ya sea en la general o en la específica del proyecto `.vscode/settings.json`.
