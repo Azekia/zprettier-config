@@ -7,6 +7,7 @@ complement with zlinter-config
 - Prettier `esbenp.prettier-vscode` 
 
 ### `Módulos necesarios`
+Es necesario instalar el paquete `zprettier-config`
 ```
 npm install --save-dev github:azekia/zprettier-config
 or
@@ -15,18 +16,13 @@ npm update zprettier-config
 
 
 ### `package.json`
-En `package.json` debemos configurar las siguientes dependencias de desarrollo y la configuración de Prettier:
+En `package.json` quedarán configuradas las dependencias y debemos añadir la líneas que configura `prettier` para usar `zprettier-config`:
 
 ```json
   "devDependencies": {
     "zprettier-config": "github:azekia/zprettier-config"
   },
   "prettier": "zprettier-config"
-```
-
-Si ya lo tienes instalado como dependencia, pero deseas actualizarlo a la última versión, puedes hacer:
-```
-npm update zprettier-config  
 ```
 
 ### `.vscode/settings.json`
