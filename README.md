@@ -2,8 +2,15 @@
 our **shared prettier linter config** for js/html/css development
 
 ---
+### Extensiones necesarias
+`dbaeumer.vscode-eslint` (eslint)
+`esbenp.prettier-vscode` (prettier)
+
+
 
 ### `package.json`
+En `package.json` debemos configurar las siguientes dependencias de desarrollo y la configuración de Prettier:
+
 ```json
   "devDependencies": {
     "eslint": "^8.49.0",
@@ -24,7 +31,7 @@ npm update zprettier-config
 
 
 ### `settings.json`
-Importante recordar que debemos tener instalado el complemento **Prettier** que en alguna configuración de Visual Studio Code, ya sea en la general o en la específica del proyecto `.vscode/settings.json`.
+En settings.json del workspace **Prettier** que en alguna configuración de Visual Studio Code, ya sea en la general o en la específica del proyecto `.vscode/settings.json`.
 Recordar que para el código javascript **no usaremos** Pettier, sino el linter que viene con vscode para Typesript.
 Por ello, debermos configurar el workspace siguiendo esta guía:
 
