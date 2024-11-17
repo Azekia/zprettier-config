@@ -1,5 +1,5 @@
 const prettier_config = {
-    "tabWidth": 5,
+    "tabWidth": 2,
     "useTabs": false,
     "singleQuote": true,
     "bracketSpacing": true,
