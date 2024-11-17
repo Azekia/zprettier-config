@@ -2,7 +2,7 @@
 our **shared prettier linter config** for js/html/css development
 
 ---
-### Extensiones necesarias
+### `Extensiones necesarias`
 - ESLint `dbaeumer.vscode-eslint`
 - Prettier `esbenp.prettier-vscode` 
 
@@ -30,18 +30,17 @@ npm update zprettier-config
 ```
 
 
-### `settings.json`
-En settings.json del workspace **Prettier** que en alguna configuración de Visual Studio Code, ya sea en la general o en la específica del proyecto `.vscode/settings.json`.
-Recordar que para el código javascript **no usaremos** Pettier, sino el linter que viene con vscode para Typesript.
-Por ello, debermos configurar el workspace siguiendo esta guía:
+### `.vscode/settings.json`
+En las preferencias del Workspace vamos a configurar los formateadores por defecto para cada tipo de archivo.
+Por ejemplo, para el código javascript **no usaremos** Pettier, sino ESLint.
 
 ```json
 {
   "editor.formatOnSave": true,
   "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.codeActionsOnSave": {
-      "source.fixAll": "explicit"
+      "source.fixAll.eslint": "explicit"
     }
   },
   "[jsonc]": {
@@ -52,29 +51,55 @@ Por ello, debermos configurar el workspace siguiendo esta guía:
   },
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#f0c018",
-    "activityBar.activeBorder": "#ffffff",
-    "activityBar.background": "#f0c018",
-    "activityBar.foreground": "#ffffff",
-    "activityBar.inactiveForeground": "#ffffff",
-    "activityBarBadge.background": "#f0c018",
-    "activityBarBadge.foreground": "#ffffff",
-    "sash.hoverBorder": "#f0c018",
-    "statusBar.background": "#f0c018",
-    "statusBar.foreground": "#000000",
-    "statusBarItem.hoverBackground": "#f0c018",
-    "statusBarItem.remoteBackground": "#f0c018",
-    "statusBarItem.remoteForeground": "#ffffff",
-    "titleBar.activeBackground": "#f0c018",
-    "titleBar.activeForeground": "#ffffff",
-    "titleBar.inactiveBackground": "#f0c018",
-    "titleBar.inactiveForeground": "#ffffff"
   }
 }
 
 ```
+
+### `.eslintrc.json`
+El fichero `.eslintrc.json` vamos a configurar las opciones de ESLint.
+
+
+```json
+{
+  "extends": ["airbnb-base"],
+  "env": {
+    "es2021": true,
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "globals": {
+    "msal": true,
+    "google": true
+  },
+  "rules": {
+    "no-param-reassign": ["off"],
+    "linebreak-style": ["off", "unix"],
+    "import/extensions": ["error", "always", { "ignorePackages": true }],
+    "import/no-absolute-path": ["error"],
+    "no-console": ["warn", { "allow": ["log", "warn", "error"] }],
+    "no-plusplus": "off",
+    "class-methods-use-this": ["off"],
+    "max-len": ["error", { "code": 136, "tabWidth": 2, "ignoreTrailingComments": true }],
+    "prefer-destructuring": ["off"],
+    "lines-between-class-members": [
+      "warn",
+      {
+        "enforce": [
+          { "blankLine": "always", "prev": "method", "next": "*" }
+          //{ "blankLine": "never", "prev": "field", "next": "*" }
+        ]
+      }
+    ]
+  }
+}
+```
+
 
 #### Reformateo de todo el proyecto
 Para reformatear todos los archivos del proyecto podemos ejecutar
