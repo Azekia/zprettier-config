@@ -112,8 +112,8 @@ El fichero `.eslintrc.json` vamos a configurar las opciones de ESLint.
 ```
 
 
-#### Reformateo de todo el proyecto
-Para reformatear todos los archivos del proyecto podemos ejecutar
+### Reformateo de todo el proyecto
+Para reformatear todos los archivos del proyecto podemos ejecutar el siguiente comando, pero ten en cuenta que puede afectar a archivos de un modo no esperado (css, etc)
 
 ```
 npx prettier --write .
