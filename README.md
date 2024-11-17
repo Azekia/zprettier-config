@@ -21,6 +21,9 @@ En `package.json` debemos configurar las siguientes dependencias de desarrollo y
     "eslint-plugin-promise": "^6.1.1",
     "zprettier-config": "github:azekia/zprettier-config"
   },
+  "eslintIgnore": [
+    "dbmigrate/*"
+  ],
   "prettier": "zprettier-config"
 ```
 
@@ -28,7 +31,6 @@ Si ya lo tienes instalado como dependencia, pero deseas actualizarlo a la últim
 ```
 npm update zprettier-config  
 ```
-
 
 ### `.vscode/settings.json`
 En las preferencias del Workspace vamos a configurar los formateadores por defecto para cada tipo de archivo.
@@ -53,8 +55,17 @@ Por ejemplo, para el código javascript **no usaremos** Pettier, sino ESLint.
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
-
 ```
+
+### `.prettierignore`
+El fichero `.prettierignore` indica que tipo de archivos deben ser ignorados en todo caso por Prettier
+```
+*.ejs
+*.mjs
+*.js
+*.json
+```
+
 
 ### `.eslintrc.json`
 El fichero `.eslintrc.json` vamos a configurar las opciones de ESLint.
