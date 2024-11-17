@@ -22,15 +22,15 @@ Este comando provocará que en `package.json` aparezca:
 
 ```
   "devDependencies": {
+    "eslint": "^8.49.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-n": "^16.1.0",
+    "eslint-plugin-promise": "^6.1.1",
     "zprettier-config": "github:azekia/zprettier-config"
-  }
-```
-
-Ahora para hacer que se use como opciones de formato... bastará con incluir en `package.json` lo siguiente:
-```
-    "prettier": "zprettier-config"
-```
-
+  },
+  "prettier": "zprettier-config"
 ---
 
 #### Selección del formateador por defecto en Visual Studio Code
