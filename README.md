@@ -20,7 +20,7 @@ npm update zprettier-config
 
 Este comando provocará que en `package.json` aparezca:
 
-```
+```json
   "devDependencies": {
     "eslint": "^8.49.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -38,7 +38,7 @@ Importante recordar que debemos tener instalado el complemento **Prettier** que 
 Recordar que para el código javascript **no usaremos** Pettier, sino el linter que viene con vscode para Typesript.
 Por ello, debermos configurar el workspace siguiendo esta guía:
 
-```
+```json
 {
   "editor.formatOnSave": true,
   "[javascript]": {
