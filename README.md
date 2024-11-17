@@ -1,24 +1,17 @@
 # zprettier-config
-our **shared prettier config** for js/html/css development
+our **shared prettier linter config** for js/html/css development
 
 ---
+### `Extensiones necesarias`
+- ESLint `dbaeumer.vscode-eslint`
+- Prettier `esbenp.prettier-vscode` 
 
 
-#### Configuración a través de package.json
-**npm install**
-Debemos instalar como dependencia de desarrollo ejecutando algo similar a...
 
-```
-npm install --save-dev https://github.com/azekia/zprettier-config.git#1.0.1
-npm install --save-dev https://github.com/azekia/zprettier-config.git
-```
+### `package.json`
+En `package.json` debemos configurar las siguientes dependencias de desarrollo y la configuración de Prettier:
 
-Si ya lo tienes instalado como dependencia, pero deseas actualizarlo a la última versión, puedes hacer:
-```
-npm update zprettier-config  
-```
-
-Este comando provocará que en `package.json` aparezca:
+Parece que la versión 9.x de slint rompió cosas, por lo que por el momento nos quedamos en 8.49
 
 ```json
   "devDependencies": {
@@ -30,21 +23,28 @@ Este comando provocará que en `package.json` aparezca:
     "eslint-plugin-promise": "^6.1.1",
     "zprettier-config": "github:azekia/zprettier-config"
   },
+  "eslintIgnore": [
+    "dbmigrate/*"
+  ],
   "prettier": "zprettier-config"
 ```
 
-#### Selección del formateador por defecto en Visual Studio Code
-Importante recordar que debemos tener instalado el complemento **Prettier** que en alguna configuración de Visual Studio Code, ya sea en la general o en la específica del proyecto `.vscode/settings.json`.
-Recordar que para el código javascript **no usaremos** Pettier, sino el linter que viene con vscode para Typesript.
-Por ello, debermos configurar el workspace siguiendo esta guía:
+Si ya lo tienes instalado como dependencia, pero deseas actualizarlo a la última versión, puedes hacer:
+```
+npm update zprettier-config  
+```
+
+### `.vscode/settings.json`
+En las preferencias del Workspace vamos a configurar los formateadores por defecto para cada tipo de archivo.
+Por ejemplo, para el código javascript **no usaremos** Pettier, sino ESLint.
 
 ```json
 {
   "editor.formatOnSave": true,
   "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.codeActionsOnSave": {
-      "source.fixAll": "explicit"
+      "source.fixAll.eslint": "explicit"
     }
   },
   "[jsonc]": {
@@ -55,32 +55,70 @@ Por ello, debermos configurar el workspace siguiendo esta guía:
   },
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#f0c018",
-    "activityBar.activeBorder": "#ffffff",
-    "activityBar.background": "#f0c018",
-    "activityBar.foreground": "#ffffff",
-    "activityBar.inactiveForeground": "#ffffff",
-    "activityBarBadge.background": "#f0c018",
-    "activityBarBadge.foreground": "#ffffff",
-    "sash.hoverBorder": "#f0c018",
-    "statusBar.background": "#f0c018",
-    "statusBar.foreground": "#000000",
-    "statusBarItem.hoverBackground": "#f0c018",
-    "statusBarItem.remoteBackground": "#f0c018",
-    "statusBarItem.remoteForeground": "#ffffff",
-    "titleBar.activeBackground": "#f0c018",
-    "titleBar.activeForeground": "#ffffff",
-    "titleBar.inactiveBackground": "#f0c018",
-    "titleBar.inactiveForeground": "#ffffff"
   }
 }
-
 ```
 
-#### Reformateo de todo el proyecto
-Para reformatear todos los archivos del proyecto podemos ejecutar
+### `.prettierignore`
+El fichero `.prettierignore` indica que tipo de archivos deben ser ignorados en todo caso por Prettier
+```
+*.ejs
+*.mjs
+*.js
+*.ts
+*.json
+```
+
+
+### `.eslintrc.json`
+El fichero `.eslintrc.json` vamos a configurar las opciones de ESLint.
+
+
+```json
+{
+  "extends": ["airbnb-base"],
+  "env": {
+    "es2021": true,
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "globals": {
+    "msal": true,
+    "google": true
+  },
+  "rules": {
+    "no-param-reassign": ["off"],
+    "linebreak-style": ["off", "unix"],
+    "import/extensions": ["error", "always", { "ignorePackages": true }],
+    "import/no-absolute-path": ["error"],
+    "no-console": ["warn", { "allow": ["log", "warn", "error"] }],
+    "no-plusplus": "off",
+    "class-methods-use-this": ["off"],
+    "max-len": ["error", { "code": 136, "tabWidth": 2, "ignoreTrailingComments": true }],
+    "prefer-destructuring": ["off"],
+    "lines-between-class-members": [
+      "warn",
+      {
+        "enforce": [
+          { "blankLine": "always", "prev": "method", "next": "*" }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### `npm install & reboot VSCode`
+Para que funcione correctamente el prettier/linter, depues de realizar estas configuraciones es necesario que hagas un `npm install` y reiniciar VSCode.
+
+
+### `npx prettier --write .`
+Para reformatear todos los archivos del proyecto podemos ejecutar el siguiente comando, pero ten en cuenta que puede afectar a archivos de un modo no esperado (css, etc)
 
 ```
 npx prettier --write .
