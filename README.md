@@ -63,6 +63,7 @@ El fichero `.prettierignore` indica que tipo de archivos deben ser ignorados en 
 *.ejs
 *.mjs
 *.js
+*.ts
 *.json
 ```
 
