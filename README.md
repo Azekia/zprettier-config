@@ -9,8 +9,8 @@ our **shared prettier config** for js/html/css development
 Debemos instalar como dependencia de desarrollo ejecutando algo similar a...
 
 ```
-npm install --save-dev https://github.com/azekia/zprettier-config.git#1.0.1
 npm install --save-dev https://github.com/azekia/zprettier-config.git
+
 ```
 
 Si ya lo tienes instalado como dependencia, pero deseas actualizarlo a la última versión, puedes hacer:
@@ -20,6 +20,15 @@ npm update zprettier-config
 
 Este comando provocará que en `package.json` aparezca:
 
+```json
+  "devDependencies": {
+    ...
+    "zprettier-config": "github:azekia/zprettier-config"
+  },
+```
+
+Nosotros lo completaremos con slint
+### `package.json`
 ```json
   "devDependencies": {
     "eslint": "^8.49.0",
