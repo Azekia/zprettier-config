@@ -23,7 +23,7 @@ npm update zprettier-config
 ```
 
 
-#### Selección del formateador por defecto en Visual Studio Code
+### `settings.json`
 Importante recordar que debemos tener instalado el complemento **Prettier** que en alguna configuración de Visual Studio Code, ya sea en la general o en la específica del proyecto `.vscode/settings.json`.
 Recordar que para el código javascript **no usaremos** Pettier, sino el linter que viene con vscode para Typesript.
 Por ello, debermos configurar el workspace siguiendo esta guía:
