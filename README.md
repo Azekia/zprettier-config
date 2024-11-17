@@ -1,31 +1,26 @@
 # zprettier-config
-our **shared prettier linter config** for js/html/css development
+our **shared prettier config** for html/scss development
+complement with zlinter-config
 
 ---
 ### `Extensiones necesarias`
-- ESLint `dbaeumer.vscode-eslint`
 - Prettier `esbenp.prettier-vscode` 
 
+### `Módulos necesarios`
+```
+npm install --save-dev github:azekia/zprettier-config
+or
+npm update zprettier-config
+```
 
 
 ### `package.json`
 En `package.json` debemos configurar las siguientes dependencias de desarrollo y la configuración de Prettier:
 
-Parece que la versión 9.x de slint rompió cosas, por lo que por el momento nos quedamos en 8.49
-
 ```json
   "devDependencies": {
-    "eslint": "^8.49.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-n": "^16.1.0",
-    "eslint-plugin-promise": "^6.1.1",
     "zprettier-config": "github:azekia/zprettier-config"
   },
-  "eslintIgnore": [
-    "dbmigrate/*"
-  ],
   "prettier": "zprettier-config"
 ```
 
@@ -67,50 +62,6 @@ El fichero `.prettierignore` indica que tipo de archivos deben ser ignorados en 
 *.js
 *.ts
 *.json
-```
-
-
-### `.eslintrc.json`
-El fichero `.eslintrc.json` vamos a configurar las opciones de ESLint.
-
-
-```json
-{
-  "extends": ["airbnb-base"],
-  "env": {
-    "es2021": true,
-    "browser": true,
-    "node": true,
-    "mocha": true
-  },
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
-  "globals": {
-    "msal": true,
-    "google": true
-  },
-  "rules": {
-    "no-param-reassign": ["off"],
-    "linebreak-style": ["off", "unix"],
-    "import/extensions": ["error", "always", { "ignorePackages": true }],
-    "import/no-absolute-path": ["error"],
-    "no-console": ["warn", { "allow": ["log", "warn", "error"] }],
-    "no-plusplus": "off",
-    "class-methods-use-this": ["off"],
-    "max-len": ["error", { "code": 136, "tabWidth": 2, "ignoreTrailingComments": true }],
-    "prefer-destructuring": ["off"],
-    "lines-between-class-members": [
-      "warn",
-      {
-        "enforce": [
-          { "blankLine": "always", "prev": "method", "next": "*" }
-        ]
-      }
-    ]
-  }
-}
 ```
 
 ### `npm install & reboot VSCode`
