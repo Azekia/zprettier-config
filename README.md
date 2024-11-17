@@ -92,7 +92,6 @@ El fichero `.eslintrc.json` vamos a configurar las opciones de ESLint.
       {
         "enforce": [
           { "blankLine": "always", "prev": "method", "next": "*" }
-          //{ "blankLine": "never", "prev": "field", "next": "*" }
         ]
       }
     ]
