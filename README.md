@@ -3,9 +3,9 @@ our **shared prettier linter config** for js/html/css development
 
 ---
 ### Extensiones necesarias
-`dbaeumer.vscode-eslint` (eslint)
+ESLint `dbaeumer.vscode-eslint`
 
-`esbenp.prettier-vscode` (prettier)
+Prettier `esbenp.prettier-vscode` 
 
 
 
