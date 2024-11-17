@@ -113,8 +113,11 @@ El fichero `.eslintrc.json` vamos a configurar las opciones de ESLint.
 }
 ```
 
+### `npm install & reboot VSCode`
+Para que funcione correctamente el prettier/linter, depues de realizar estas configuraciones es necesario que hagas un `npm install` y reiniciar VSCode.
 
-### Reformateo de todo el proyecto
+
+### `npx prettier --write .`
 Para reformatear todos los archivos del proyecto podemos ejecutar el siguiente comando, pero ten en cuenta que puede afectar a archivos de un modo no esperado (css, etc)
 
 ```
