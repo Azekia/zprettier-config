@@ -51,7 +51,7 @@ Por ejemplo, para el código javascript **no usaremos** Pettier, sino ESLint.
 ```
 
 ### `.prettierignore`
-El fichero `.prettierignore` indica que tipo de archivos deben ser ignorados en todo caso por Prettier
+Opcionalmente el fichero `.prettierignore` indica que tipo de archivos deben ser ignorados en todo caso por Prettier
 ```
 *.ejs
 *.mjs
