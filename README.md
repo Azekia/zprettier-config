@@ -57,7 +57,6 @@ Opcionalmente el fichero `.prettierignore` indica que tipo de archivos deben ser
 *.mjs
 *.js
 *.ts
-*.json
 ```
 
 ### `npm install & reboot VSCode`
